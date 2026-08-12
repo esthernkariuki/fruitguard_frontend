@@ -19,8 +19,7 @@ const MqttSubscriber = () => {
     const client = mqtt.connect(brokerUrl, options);
 
     client.on('connect', () => {
-      client.subscribe('esp32/alert', (_err) => {
-      });
+      client.subscribe('esp32/alert');
     });
     client.on('message', async (topic, message) => {
       try {
